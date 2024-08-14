@@ -5,7 +5,7 @@ namespace semantic_kernel
 {
     public  class Setting
     {
-        public static (string apiKey, string? orgId) LoadFromFile(string configFile = "config/settings.json")
+        public static (string apiKey, string? orgId) LoadFromFile()
         {
             IConfiguration config = new ConfigurationBuilder()
                         .AddUserSecrets<Setting>()
