@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>95f68d99-e077-4e42-bba0-032c3da0542a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="plugins\jokes\explain_joke\config.json" />
+    <None Remove="plugins\jokes\explain_joke\skprompt.txt" />
+    <None Remove="plugins\jokes\knock_knock_joke\config.json" />
+    <None Remove="plugins\jokes\knock_knock_joke\skprompt.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.0" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.17.1" />
+    <PackageReference Include="Microsoft.SemanticKernel.Planners.Handlebars" Version="1.15.0-preview" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="plugins\jokes\explain_joke\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="plugins\jokes\explain_joke\skprompt.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="plugins\jokes\knock_knock_joke\config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="plugins\jokes\knock_knock_joke\skprompt.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
